@@ -80,7 +80,15 @@ const UserListSidebar: React.FC<UserListSidebarProps> = ({
   };
 
   return (
-    <div className="w-64 bg-white border-l border-gray-200 flex flex-col h-full">
+    <>
+      {/* Mobile Overlay */}
+      <div 
+        className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden animate-fade-in"
+        onClick={onClose}
+      />
+      
+      {/* Sidebar */}
+      <div className="fixed md:relative inset-y-0 right-0 z-50 w-full md:w-64 bg-white border-l border-gray-200 flex flex-col h-full animate-slide-in-right">
       {/* Header */}
       <div className="p-4 border-b border-gray-200">
         <div className="flex items-center justify-between">
@@ -144,7 +152,8 @@ const UserListSidebar: React.FC<UserListSidebarProps> = ({
           </div>
         </ScrollArea>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 

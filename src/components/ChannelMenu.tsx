@@ -27,9 +27,10 @@ import JoinChannelDialog from './JoinChannelDialog';
 interface ChannelMenuProps {
   selectedChannelId?: string;
   onChannelSelect: (channelId: string) => void;
+  onMobileMenuClose?: () => void;
 }
 
-const ChannelMenu: React.FC<ChannelMenuProps> = ({ selectedChannelId, onChannelSelect }) => {
+const ChannelMenu: React.FC<ChannelMenuProps> = ({ selectedChannelId, onChannelSelect, onMobileMenuClose }) => {
   const { authUser, logout } = useAuthRedux();
   const { channels, loading: channelsLoading } = useChannels(authUser?.uid);
   const { createChannel, updateChannel, deleteChannel, joinChannel, searchChannels } = useChannelOperations();
@@ -143,7 +144,7 @@ const ChannelMenu: React.FC<ChannelMenuProps> = ({ selectedChannelId, onChannelS
   // Update user presence when auth user changes
   React.useEffect(() => {
     if (authUser) {
-      updatePresence(true, authUser.displayName || undefined, authUser.email || undefined);
+      updatePresence(true);
     }
   }, [authUser, updatePresence]);
 
