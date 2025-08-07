@@ -156,7 +156,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ channelId, channelName = 
                           </AvatarFallback>
                         </Avatar>
                         {/* Online status indicator */}
-                        <div className={`absolute bottom-0.5 right-0.5 w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full border-2 border-white transition-colors duration-200 ${
+                        <div className={`absolute bottom-1 right-1 w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full border-2 border-white transition-colors duration-200 ${
                           isUserOnline(msg.userId) ? 'bg-green-400' : 'bg-gray-400'
                         }`} />
                       </div>
