@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ReduxProvider } from "@/provider/ReduxProvider";
 import { AuthInitializer } from "@/components/AuthInitializer";
+import QCProvider from "@/provider/QCProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,7 +32,7 @@ export default function RootLayout({
       >
         <ReduxProvider>
           <AuthInitializer>
-            {children}
+            <QCProvider>{children}</QCProvider>
           </AuthInitializer>
         </ReduxProvider>
       </body>

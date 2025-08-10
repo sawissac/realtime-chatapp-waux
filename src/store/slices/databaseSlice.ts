@@ -257,7 +257,7 @@ export const createChannel = createAsyncThunk(
         }
       };
       
-      // Write the channel data
+      // Write the channel data 
       await set(newChannelRef, newChannel);
       
       // Add the channel to user's channel list

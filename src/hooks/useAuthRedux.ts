@@ -52,9 +52,12 @@ export function useAuthRedux() {
     if(path === APP_ROUTES.SIGNUP && !authUser) {
       return;
     }
+
     if (!loading && !authUser) {
       router.push(APP_ROUTES.SIGNIN);
     }
+
+
   }, [authUser, loading, router]);
 
   return {
