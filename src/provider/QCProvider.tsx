@@ -12,5 +12,5 @@ const QCProvider = ({ children }: { children: React.ReactNode }) => {
     </QueryClientProvider>
   )
 }
-
-export default QCProvider
+ 
+export default QCProvider;
